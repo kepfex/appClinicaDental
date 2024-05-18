@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m; 
+
+.contacto {
+    padding: 5rem 0;
+    background-image: linear-gradient(to top, #8ed6d4, #f9fafb);
+
+    &__grid {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 4rem;
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 2rem;
+    }
+    &__card {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    &__icono {
+        width: 4rem;
+    }
+    &__texto {
+        color: v.$gris-oscuro;
+    }
+    &__titulo {
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: left;
+    }
+    &__descripcion {
+        font-size: 1.4rem;
+    }
+
+    &__formulario {
+        background: linear-gradient(120deg, v.$azul 0%, v.$secundario 100%);
+        border-radius: 2rem;
+        padding: 5rem 4rem;
+    }
+    &__formulario-heading {
+        color: v.$blanco;
+        text-align: left;
+    }
+}

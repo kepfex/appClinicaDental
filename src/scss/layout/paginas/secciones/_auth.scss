@@ -1,0 +1,63 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m; 
+
+.auth {
+    
+    
+    &__contenido {
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+        }
+    }
+    &__imagen-fondo {
+        display: none;
+
+        @include m.desktop {
+            display: block;
+            height: 100vh;
+
+            & img {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+    &__formulario {
+        padding: 2rem;
+        padding-top: 4rem;
+        max-width: 46rem;
+        margin: 0 auto;
+        @include m.desktop {
+            padding: 0 6rem;
+        }
+    }
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+
+        &-icono {
+            width: 4rem;
+        }
+        &-nombre {
+            @include m.texto-fluido(1rem, 2rem);
+            @include m.texto-degradado(v.$azul, v.$secundario);
+            text-align: center;
+            margin: 0;
+            @include m.tablet {
+                text-align: left;
+                display: inline-block;
+            }
+            &--delgado {
+                font-weight: v.$regular;
+            }
+        }
+    }
+
+    &__texto {
+        margin: 0 0 2rem 0;
+    }
+}

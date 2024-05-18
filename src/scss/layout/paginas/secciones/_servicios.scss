@@ -1,0 +1,38 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m; 
+
+.servicios {
+    padding-top: 10rem;
+    margin-bottom: 10rem;
+
+    &__contenido {
+        @include m.grid(1, 5rem);
+
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 5rem);
+        }
+    } 
+    &__card {
+        background-color: lighten(v.$gris, 30%);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 1.5rem;
+        padding: 3rem;
+    }
+    &__imagen {
+        width: 10rem;
+    }
+    &__texto {
+        margin-top: 1rem;
+    }
+    &__titulo {
+        text-align: left;
+        color: v.$azul;
+        font-size: 1.8rem;
+    }
+    &__descripcion {
+        color: v.$gris-oscuro;
+    }
+} 

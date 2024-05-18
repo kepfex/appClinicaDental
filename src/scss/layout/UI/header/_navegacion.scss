@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m; 
+
+.navegacion {
+    display: flex;
+    gap: 10rem;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: flex-end;
+    &__secciones, &__login {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__secciones {
+        // display: none;
+    }
+    &__enlace {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: v.$gris-oscuro;
+        transition: color ease 100ms;
+        &:hover {
+            color: v.$azul;
+        }
+
+        &--iniciar {
+            border: solid 1px v.$azul;
+            padding: .8rem 1rem;
+            border-radius: .5rem;
+        }
+        &--registrar {
+            background-color: v.$azul;
+            padding: .8rem 1rem;
+            border-radius: .5rem;
+            color: v.$blanco;
+            transition: background-color ease 200ms;
+            &:hover {
+                background-color: darken(v.$azul, 10);
+                color: v.$blanco;
+            }
+        }
+        
+    }
+}
+

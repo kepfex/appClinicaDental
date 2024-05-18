@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+
+.titulo {
+    margin-bottom: 4rem;
+
+    
+    & p {
+        color: v.$secundario;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    } 
+
+    &__heading {
+        color: darken(v.$azul, 10%);
+        text-align: left;
+    } 
+
+    &--right {
+        text-align: right;
+    }
+}

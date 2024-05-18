@@ -1,0 +1,10 @@
+@use 'base/variables' as v;
+
+.footer {
+    background-color: #8ed6d4;
+    &__dev {
+        text-align: center;
+        padding: 4rem 0;
+        font-weight: 600;
+    }
+}

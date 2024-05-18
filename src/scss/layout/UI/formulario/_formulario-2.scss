@@ -1,0 +1,84 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.formulario-2 {
+  
+
+  &__campo {
+    position: relative;
+    //gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  &__label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    transition: all 0.2s;
+    padding: 0 0.5rem;
+    z-index: 1;
+    color: v.$gris;
+    &::before {
+      content: "";
+      height: 0.5rem;
+      width: 100%;
+      background-color: v.$background;
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      z-index: -1;
+    }
+  }
+
+  &__input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid lighten(v.$gris, 30%);
+    border-radius: 0.5rem;
+    //outline: 1px solid red;
+    transition: all 0.3s;
+    &:focus {
+      border: 2px solid v.$azul;
+      outline: none;
+
+      & + .formulario-2__label,
+      .filled {
+        top: -1rem;
+        color: v.$azul;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      &::placeholder {
+        opacity: 1;
+        animation-delay: 0.2s;
+      }
+    }
+
+    &::placeholder {
+      // font-size: ;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  &__submit {
+    @include m.boton(v.$azul, v.$blanco);
+    width: auto;
+    align-self: flex-start;
+
+    &--registrar,
+    &--full {
+        width: 100%;
+    }
+}
+}
+
+.formulario-2__input:focus ~ .formulario-2__label,
+.formulario-2__input:not(:placeholder-shown).formulario-2__input:not(:focus)
+  ~ .formulario-2__label {
+  top: -1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+   // left: 0.8rem;
+}
