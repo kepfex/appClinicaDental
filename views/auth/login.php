@@ -1,3 +1,16 @@
+<?php
+require_once __DIR__.'../../../classes/config.php';
+
+
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+    header('Location: /');
+    exit();
+}
+
+$login_url = $client->createAuthUrl();
+
+?>
+
 <main class="auth">
     <div class="auth__contenido">
         <div class="auth__imagen-fondo">
@@ -24,9 +37,17 @@
                 </div>
 
                 <h2 class="auth__titulo"><?php echo $titulo; ?></h2>
-                <p class="auth__texto">Inicia sesión en SmartDent</p>
+                <p class="auth__texto">Inicia sesión en SmartDent:</p>
+
 
                 
+                <div class="boton-google">
+                    <a href="<?php echo $login_url; ?>" class="boton-google__enlace"><img src="/build/img/google.svg" alt="logo google">Continuar con Google</a>
+                </div>
+
+                <div class="auth__step">
+                    <p>o usa tu correo electrónico</p>
+                </div>
 
                 <form class="formulario-2" method="POST" action="/login">
                     <div class="formulario-2__campo">

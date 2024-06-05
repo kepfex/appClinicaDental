@@ -57,7 +57,40 @@
         }
     }
 
+    &__titulo {
+        font-size: 3rem;
+    }
     &__texto {
         margin: 0 0 2rem 0;
     }
+
+    &__step {
+        position: relative;
+        display: block;
+        text-align: center;
+        & p {
+            color: v.$gris;
+            &::after {
+                background-color: v.$gris;
+                bottom: 0;
+                content: "";
+                height: 1px;
+                left: 0;
+                position: absolute;
+                top: 50%;
+                width: 15%;
+            }
+            &::before {
+                background-color: v.$gris;
+                bottom: 0;
+                content: "";
+                height: 1px;
+                right: 0;
+                position: absolute;
+                top: 50%;
+                width: 15%;
+            }
+        }
+    }
+
 }

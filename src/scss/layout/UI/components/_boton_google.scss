@@ -1,0 +1,30 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.boton-google {
+    margin-bottom: 2rem;
+    &__enlace {
+        border-radius: .5rem;
+        text-align: center;
+        background-color: v.$blanco;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        color: v.$negro;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition-property: background-color;
+        transition-duration: .5s;
+
+        & img {
+            width: 2rem;
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            background-color: darken(v.$blanco, 5%);
+            color: v.$negro;
+        }
+    }
+}

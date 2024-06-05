@@ -54,12 +54,11 @@
                         <label for="password2" class="formulario-2__label">Repetir contraseña</label>
                     </div>
 
-                    <input type="submit" class="formulario-2__submit formulario-2__submit--full" value="Iniciar Sesión">
+                    <input type="submit" class="formulario-2__submit formulario-2__submit--full" value="Crear Cuenta">
                 </form>
 
                 <div class="acciones">
-                    <a href="/olvide" class="acciones__enlace">¿Olvidaste tu Password?</a>
-                    <p class="acciones__texto">¿Todavía no tienes una cuenta? <a href="/registro" class="acciones__enlace">Regístrate</a></p>
+                    <p class="acciones__texto">¿Ya tienes cuenta? <a href="/login" class="acciones__enlace">Iniciar Sesión</a></p>
                 </div>
             </div>
         </div>

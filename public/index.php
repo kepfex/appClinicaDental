@@ -10,6 +10,9 @@ $router = new Router();
 
 // Login
 $router->get('/login', [AuthController::class, 'login']);
+$router->get('/profile', [AuthController::class, 'profile']);
+$router->get('/callback',[AuthController::class, 'callback']);
+$router->get('/logout',[AuthController::class, 'logout']);
 
 // Crear cuenta
 $router->get('/registro', [AuthController::class, 'registro']);
